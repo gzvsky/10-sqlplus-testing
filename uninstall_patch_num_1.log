@@ -1,0 +1,37 @@
+#######                                       ######
+#     # #####    ##    ####  #      ######    #     #   ##   #####  ####  #    #  ####  ###### #####
+#     # #    #  #  #  #    # #      #         #     #  #  #    #   #    # #    # #      #        #
+#     # #    # #    # #      #      #####     ######  #    #   #   #      ######  ####  #####    #
+#     # #####  ###### #      #      #         #       ######   #   #      #    #      # #        #
+#     # #   #  #    # #    # #      #         #       #    #   #   #    # #    # #    # #        #
+####### #    # #    #  ####  ###### ######    #       #    #   #    ####  #    #  ####  ######   #
+______________________________
+
+Patch ver  DB User    Current Date         OS User         NLS Language    DB Name         DB Version                                                 
+---------- ---------- -------------------- --------------- --------------- --------------- ------------------------------                             
+1          SYSTEM     12.04.2020 16:29:51  p.gazovskiy     AMERICAN_AMERIC ORCLCDB         Oracle Database 19c Enterprise                             
+                                                           A.AL32UTF8                       Edition Release 19.0.0.0.0 -                              
+                                                                                           Production                                                 
+                                                                                                                                                      
+
+______________________________
+================
+drop package client_pkg
+
+Package dropped.
+
+drop trigger client_b_iu
+
+Trigger dropped.
+
+drop sequence client_seq
+
+Sequence dropped.
+
+drop table client
+
+Table dropped.
+
+================
+
+Patch was successfull uninstalled :)

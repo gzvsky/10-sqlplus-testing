@@ -1,0 +1,92 @@
+#######                                       ######
+#     # #####    ##    ####  #      ######    #     #   ##   #####  ####  #    #  ####  ###### #####
+#     # #    #  #  #  #    # #      #         #     #  #  #    #   #    # #    # #      #        #
+#     # #    # #    # #      #      #####     ######  #    #   #   #      ######  ####  #####    #
+#     # #####  ###### #      #      #         #       ######   #   #      #    #      # #        #
+#     # #   #  #    # #    # #      #         #       #    #   #   #    # #    # #    # #        #
+####### #    # #    #  ####  ###### ######    #       #    #   #    ####  #    #  ####  ######   #
+______________________________
+
+Patch ver  DB User    Current Date         OS User         NLS Language    DB Name         DB Version                                                 
+---------- ---------- -------------------- --------------- --------------- --------------- ------------------------------                             
+1          SYSTEM     12.04.2020 16:29:49  p.gazovskiy     AMERICAN_AMERIC ORCLCDB         Oracle Database 19c Enterprise                             
+                                                           A.AL32UTF8                       Edition Release 19.0.0.0.0 -                              
+                                                                                           Production                                                 
+                                                                                                                                                      
+
+______________________________
+================
+>>>> others/_before.sql
+
+client_seq.sq
+
+Sequence created.
+
+>>>> tables/_tables.sql
+
+client.tab
+
+Table created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Index created.
+
+
+Index created.
+
+
+Index created.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+>>>> packages/_packages.sql
+
+client_pkg.spc
+
+Package created.
+
+client_pkg.bdy
+
+Package body created.
+
+>>>> data/_data.sql
+
+>>>> others/_after.sql
+client_b_iu.trg
+
+Trigger created.
+
+================
+
+Patch was successfull installed :)
