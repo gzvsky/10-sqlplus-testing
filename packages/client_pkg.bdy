@@ -1,4 +1,3 @@
-
 create or replace package body client_pkg is
 
     g_is_api boolean:= false;
@@ -45,19 +44,25 @@ create or replace package body client_pkg is
     end;
 
     -- Обновление клиента
-    function update_client(pi_client_id client.c_id%type, p_visit_date client.c_last_visit_date%type, pi_autocommit boolean := false) return client.c_id%type
+    function update_client(pi_client_id client.c_id%type, pi_visit_date client.c_last_visit_date%type, pi_autocommit boolean := false) return client.c_id%type
         is
+        v_temp_id client.c_id%type;
     begin
         -- проверяем входные параметры
         if pi_client_id is null
-           or p_visit_date is null
+           or pi_visit_date is null
         then
-          raise_application_error(c_error_code_wrong_input_param,
-                                  c_error_msg_wrong_input_param);
+            raise_application_error(c_error_code_wrong_input_param,
+                                    c_error_msg_wrong_input_param);
         end if;
         g_is_api := true;
 
-        update client set c_last_visit_date = p_visit_date where c_id = pi_client_id;
+        update client set c_last_visit_date = pi_visit_date where c_id = pi_client_id returning c_id into v_temp_id;
+
+        if v_temp_id is null then
+            raise_application_error(c_error_code_client_doesnt_exist,
+                                    c_error_msg_client_doesnt_exist);
+        end if;
 
         if pi_autocommit then
             commit;
@@ -68,9 +73,6 @@ create or replace package body client_pkg is
         return pi_client_id;
 
         exception
-        when no_data_found then
-            raise_application_error(c_error_code_client_doesnt_exist,
-                                    c_error_msg_client_doesnt_exist);
         when others then
             g_is_api := false;
             raise;
@@ -111,7 +113,8 @@ create or replace package body client_pkg is
 
     procedure prevent_direct_change is
     begin
-        if not g_is_api then
+        if not (g_is_api or nvl(sys_context('clientcontext', 'force_dml'), 'false') = 'true')
+        then
             raise_application_error(c_error_code_manual_change_forbidden,
                                     c_error_msg_manual_change_forbidden);
         end if;

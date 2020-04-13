@@ -53,6 +53,9 @@ set timing off
 prompt >>>> others/_after.sql
 @@others/_after.sql
 
+-- tests 
+prompt >>>> tests/_tests.sql
+@@tests/_tests.sql
 
 prompt ================
 prompt 

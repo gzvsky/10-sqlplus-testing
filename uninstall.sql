@@ -21,6 +21,9 @@ whenever sqlerror continue
 prompt ================
 
 ---- удаляются объекты
+prompt drop package test_client_pkg;
+drop package test_client_pkg;
+
 prompt drop package client_pkg;
 drop package client_pkg;
 
