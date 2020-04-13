@@ -9,7 +9,7 @@ ______________________________
 
 Patch ver  DB User    Current Date         OS User         NLS Language    DB Name         DB Version                                                 
 ---------- ---------- -------------------- --------------- --------------- --------------- ------------------------------                             
-1          HR         14.04.2020 01:26:12  p.gazovskiy     AMERICAN_AMERIC commoniddev     Oracle Database 18c Enterprise                             
+1          HR         14.04.2020 01:31:47  p.gazovskiy     AMERICAN_AMERIC commoniddev     Oracle Database 18c Enterprise                             
                                                            A.AL32UTF8                       Edition Release 18.0.0.0.0 -                              
                                                                                            Production                                                 
                                                                                                                                                       
@@ -17,32 +17,20 @@ Patch ver  DB User    Current Date         OS User         NLS Language    DB Na
 ______________________________
 ================
 drop package test_client_pkg
-drop package test_client_pkg
-*
-ERROR at line 1:
-ORA-04043: object TEST_CLIENT_PKG does not exist 
 
+Package dropped.
 
 drop package client_pkg
-drop package client_pkg
-*
-ERROR at line 1:
-ORA-04043: object CLIENT_PKG does not exist 
 
+Package dropped.
 
 drop trigger client_b_iu
-drop trigger client_b_iu
-*
-ERROR at line 1:
-ORA-04080: trigger 'CLIENT_B_IU' does not exist 
 
+Trigger dropped.
 
 drop sequence client_seq
-drop sequence client_seq
-              *
-ERROR at line 1:
-ORA-02289: sequence does not exist 
 
+Sequence dropped.
 
 drop table client
 
