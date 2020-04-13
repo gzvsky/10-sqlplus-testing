@@ -9,8 +9,8 @@ ______________________________
 
 Patch ver  DB User    Current Date         OS User         NLS Language    DB Name         DB Version                                                 
 ---------- ---------- -------------------- --------------- --------------- --------------- ------------------------------                             
-1          SYSTEM     12.04.2020 16:29:51  p.gazovskiy     AMERICAN_AMERIC ORCLCDB         Oracle Database 19c Enterprise                             
-                                                           A.AL32UTF8                       Edition Release 19.0.0.0.0 -                              
+1          P_GAZOVSKI 13.04.2020 17:38:45  p.gazovskiy     AMERICAN_AMERIC commoniddev     Oracle Database 18c Enterprise                             
+           Y                                               A.AL32UTF8                       Edition Release 18.0.0.0.0 -                              
                                                                                            Production                                                 
                                                                                                                                                       
 
