@@ -1,0 +1,27 @@
+create table client
+(
+  c_id                      number(20,0)          not null,
+  c_first_name              varchar2(200 CHAR)    not null,
+  c_last_name               varchar2(200 CHAR)    not null,
+  c_middle_name             varchar2(200 CHAR),
+  c_gender                  char(1 CHAR)          not null,
+  c_birth_date              date                  not null,
+  c_created_at_date         date  default sysdate not null,
+  c_last_visit_date         date                  not null
+);
+create index c_first_name_idx on client(c_first_name);
+create index c_last_name_idx on client(c_last_name);
+create index c_middle_name_idx on client(c_middle_name);
+
+alter table client add constraint client_id_pk     primary key     (c_id);
+alter table client add constraint c_gender_ck      check           (c_gender in ('M','F'));
+alter table client add constraint c_birth_date_created_date_ck              check           (c_birth_date <= c_created_at_date);
+alter table client add constraint c_created_at_date_last_visit_date_ck      check           (c_created_at_date <= c_last_visit_date);
+
+comment on table client is 'Клиенты';
+comment on column client.c_first_name is 'Имя';
+comment on column client.c_last_name is 'Фамилия';
+comment on column client.c_middle_name is 'Отчество';
+comment on column client.c_gender is 'Пол = {F, M}';
+comment on column client.c_birth_date is 'Дата рождения клиента';
+comment on column client.c_created_at_date is 'Дата вставки записи';

@@ -1,0 +1,1 @@
+create sequence client_seq cycle minvalue 1 maxvalue 100000000000000 cache 1000 increment by 1;
